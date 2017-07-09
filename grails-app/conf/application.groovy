@@ -4,7 +4,7 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'youndevice.adm
 grails.plugin.springsecurity.authority.className = 'youndevice.admin.Role'
 grails.plugin.springsecurity.auth.loginFormUrl = '/login'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-        [pattern: '/', access: ['permitAll']],
+        [pattern: '/', access: ['ROLE_USER']],
         [pattern: '/error', access: ['permitAll']],
         [pattern: '/index', access: ['ROLE_USER']],
         [pattern: '/device/**', access: ['ROLE_ADMIN']],
