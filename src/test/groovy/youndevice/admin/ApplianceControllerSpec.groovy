@@ -3,7 +3,7 @@ package youndevice.admin
 import grails.test.mixin.*
 import spock.lang.*
 
-@TestFor(ApplianceController)
+@TestFor(AdminApplianceController)
 @Mock(Appliance)
 class ApplianceControllerSpec extends Specification {
 
@@ -98,7 +98,7 @@ class ApplianceControllerSpec extends Specification {
             controller.update(null)
 
         then:"A 404 error is returned"
-            response.redirectedUrl == '/appliance/index'
+            response.redirectedUrl == '/adminAppliance/index'
             flash.message != null
 
         when:"An invalid domain instance is passed to the update action"

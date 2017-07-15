@@ -7,10 +7,10 @@ class BootStrapService {
 
     def createDummyAdminUser() {
         log.info(" ****** Inserting Dummy Admin User ****** ")
-        User savedUser = User.findByUsername("admin@youndevice.com")
+        User savedUser = User.findByUsername("admin@test.com")
         if (!savedUser) {
             def adminRole = new Role(authority: 'ROLE_ADMIN').save(failOnError: true)
-            User adminUser = new User(username: "admin@youndevice.com",
+            User adminUser = new User(username: "admin@test.com",
                     password: "admin")
             adminUser.save(failOnError: true)
             UserRole.create(adminUser, adminRole, true)

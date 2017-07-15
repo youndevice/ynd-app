@@ -17,12 +17,15 @@ class User implements Serializable {
 	String firstName
 	String lastName
 	String mobileNumber
+	String text
 	String username
 	String password
 	boolean enabled = true
 	boolean accountExpired = false
 	boolean accountLocked =false
 	boolean passwordExpired = false
+
+	static hasMany = [devices:Device]
 
 	Set<Role> getAuthorities() {
 		(UserRole.findAllByAdminUser(this) as List<UserRole>)*.adminRole as Set<Role>
@@ -50,6 +53,7 @@ class User implements Serializable {
 		firstName nullable: true,blank: true
 		lastName nullable: true,blank: true
 		mobileNumber nullable: true,blank: true
+		text nullable: true,blank: true
 	}
 
 	static mapping = {

@@ -15,7 +15,10 @@ class Device {
     DeviceType deviceType
     ApplianceType applianceType = ApplianceType.TYPE_0
 
-//    static belongsTo = [user:User]
+    static belongsTo = [user:User]
+
+    static hasMany = [appliances:Appliance]
+
     static constraints = {
         enabled nullable: true
         deviceType nullable: true

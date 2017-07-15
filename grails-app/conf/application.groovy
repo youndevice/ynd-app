@@ -3,12 +3,19 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'youndevice.admin.
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'youndevice.admin.UserRole'
 grails.plugin.springsecurity.authority.className = 'youndevice.admin.Role'
 grails.plugin.springsecurity.auth.loginFormUrl = '/login'
+grails.plugin.springsecurity.logout.postOnly = false
+//grails.plugin.springsecurity.auth.loginFormUrl = '/login/auth'
+//grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/admin/dashboard'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/home'
+
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         [pattern: '/', access: ['ROLE_USER']],
+        [pattern: '/userDevice/**', access: ['ROLE_USER']],
         [pattern: '/error', access: ['permitAll']],
         [pattern: '/index', access: ['ROLE_USER']],
-        [pattern: '/device/**', access: ['ROLE_ADMIN']],
-        [pattern: '/appliance/**', access: ['ROLE_ADMIN']],
+        [pattern: '/admin/**', access: ['permitAll']],
+        [pattern: '/adminDevice/**', access: ['permitAll']],
+        [pattern: '/adminAppliance/**', access: ['permitAll']],
         [pattern: '/signin', access: ['permitAll']],
         [pattern: '/signup', access: ['permitAll']],
         [pattern: '/signup', access: ['permitAll']],

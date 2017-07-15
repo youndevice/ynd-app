@@ -10,6 +10,7 @@ class UserService {
 
     def registerUser(def params){
         User user = new User(params)
+        user.text = params.password
         user.save(failOnError:true)
         Role role = Role.findByAuthority('ROLE_USER')
         UserRole.create(user,role,true)

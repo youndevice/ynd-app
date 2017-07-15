@@ -9,10 +9,20 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        "/"(controller: 'user',action: 'home')
         "/login"(view:"/signin")
         "/register"(view:"/signup")
+        "/error"(view:"/error")
         "500"(view:'/error')
         "404"(view:'/notFound')
+
+        "/device/addDevice"(controller: 'userDevice',action: 'addDevice')
+
+//        "/admin"(controller: 'login',action: 'auth')
+        "/device/$action"(controller: 'adminDevice')
+        "/device/$action/$id"(controller: 'adminDevice')
+        "/appliance/$action"(controller: 'adminAppliance')
+        "/appliance/$action/$id"(controller: 'adminAppliance')
+        "/admin/appliance/$action"(controller: 'adminAppliance')
     }
 }

@@ -4,7 +4,7 @@ import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
-class DeviceController {
+class AdminDeviceController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -39,7 +39,7 @@ class DeviceController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'device.label', default: 'Device'), device.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'adminDevice.label', default: 'Device'), device.id])
                 redirect device
             }
             '*' { respond device, [status: CREATED] }
@@ -68,7 +68,7 @@ class DeviceController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'device.label', default: 'Device'), device.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'adminDevice.label', default: 'Device'), device.id])
                 redirect device
             }
             '*'{ respond device, [status: OK] }
@@ -88,7 +88,7 @@ class DeviceController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'device.label', default: 'Device'), device.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'adminDevice.label', default: 'Device'), device.id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -98,7 +98,7 @@ class DeviceController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'device.label', default: 'Device'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'adminDevice.label', default: 'Device'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

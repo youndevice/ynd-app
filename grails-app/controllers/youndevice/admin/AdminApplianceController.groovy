@@ -4,7 +4,7 @@ import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
-class ApplianceController {
+class AdminApplianceController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -39,7 +39,7 @@ class ApplianceController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'appliance.label', default: 'Appliance'), appliance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'adminAppliance.label', default: 'Appliance'), appliance.id])
                 redirect appliance
             }
             '*' { respond appliance, [status: CREATED] }
@@ -68,7 +68,7 @@ class ApplianceController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'appliance.label', default: 'Appliance'), appliance.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'adminAppliance.label', default: 'Appliance'), appliance.id])
                 redirect appliance
             }
             '*'{ respond appliance, [status: OK] }
@@ -88,7 +88,7 @@ class ApplianceController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'appliance.label', default: 'Appliance'), appliance.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'adminAppliance.label', default: 'Appliance'), appliance.id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -98,7 +98,7 @@ class ApplianceController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'appliance.label', default: 'Appliance'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'adminAppliance.label', default: 'Appliance'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

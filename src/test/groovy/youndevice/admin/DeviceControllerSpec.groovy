@@ -3,7 +3,7 @@ package youndevice.admin
 import grails.test.mixin.*
 import spock.lang.*
 
-@TestFor(DeviceController)
+@TestFor(AdminDeviceController)
 @Mock(Device)
 class DeviceControllerSpec extends Specification {
 

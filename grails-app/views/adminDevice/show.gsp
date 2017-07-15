@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'device.label', default: 'Device')}" />
+        <meta name="layout" content="admin" />
+        <g:set var="entityName" value="${message(code: 'adminDevice.label', default: 'Device')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>

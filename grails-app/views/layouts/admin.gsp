@@ -30,8 +30,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><g:link controller="device" action="list">Device Management  <span class="sr-only">(current)</span></g:link></li>
-                <li><a href="#">Link</a></li>
+                <li class="active"><g:link controller="adminDevice" action="index">Device Management  <span class="sr-only">(current)</span></g:link></li>
+                <li><g:link controller="adminAppliance" action="index">Appliance Management  <span class="sr-only">(current)</span></g:link></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
