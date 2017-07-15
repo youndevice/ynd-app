@@ -9,6 +9,11 @@ class UserDeviceController {
 
     def springSecurityService
 
+    def listDevices(){
+        User user = springSecurityService.currentUser
+        [deviceList:user?.devices]
+    }
+
     def addDevice() {
     }
 

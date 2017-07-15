@@ -21,8 +21,12 @@ class UserController {
 
     def home(){
         User user = springSecurityService.currentUser
-        println ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>home called"
-        [deviceList:user?.devices]
+        def deviceList =user?.devices
+        List applianceList = deviceList.collect {
+            it.appliances
+        }
+        applianceList = applianceList.flatten()
+        [deviceList:deviceList,applianceList:applianceList]
     }
 
 }

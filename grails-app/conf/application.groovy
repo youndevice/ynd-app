@@ -11,6 +11,7 @@ grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/home'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         [pattern: '/', access: ['ROLE_USER']],
         [pattern: '/userDevice/**', access: ['ROLE_USER']],
+        [pattern: '/userAppliance/**', access: ['ROLE_USER']],
         [pattern: '/error', access: ['permitAll']],
         [pattern: '/index', access: ['ROLE_USER']],
         [pattern: '/admin/**', access: ['permitAll']],

@@ -1,15 +1,19 @@
 package youndevice.admin
 
+import com.youndevice.core.enums.ApplianceCategory
+import com.youndevice.core.enums.WebStatus
 import com.youndevice.core.utils.CoreDateTimeUtil
 
 class Appliance {
 
-    String webStatus
+    WebStatus webStatus = WebStatus.OFF
     String actualDeviceStatus
     String userFriendlyName
     String applianceId
     Date dateCreated
     Date lastUpdated
+    int pinNumber = 0
+    ApplianceCategory category
 
     static belongsTo = [device:Device]
 
