@@ -11,6 +11,7 @@ class UrlMappings {
 
 //        "/"(controller: 'user',action: 'home')
         "/"(view:"/comingsoon")
+        "/personalized-birthday-card"(controller: 'util',action: 'test')
         "/login"(view:"/signin")
         "/comingsoon"(view:"/comingsoon")
         "/home"(controller: 'user',action: 'home')
