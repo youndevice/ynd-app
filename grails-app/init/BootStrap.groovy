@@ -1,3 +1,5 @@
+package youndevice.admin
+
 import youndevice.admin.BootStrapService
 
 class BootStrap {
