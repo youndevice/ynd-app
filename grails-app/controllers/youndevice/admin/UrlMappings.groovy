@@ -9,8 +9,10 @@ class UrlMappings {
             }
         }
 
-        "/"(controller: 'user',action: 'home')
+//        "/"(controller: 'user',action: 'home')
+        "/"(view:"/comingsoon")
         "/login"(view:"/signin")
+        "/comingsoon"(view:"/comingsoon")
         "/register"(view:"/signup")
         "/error"(view:"/error")
         "500"(view:'/error')

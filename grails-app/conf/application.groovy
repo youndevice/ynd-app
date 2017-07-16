@@ -6,10 +6,11 @@ grails.plugin.springsecurity.auth.loginFormUrl = '/login'
 grails.plugin.springsecurity.logout.postOnly = false
 //grails.plugin.springsecurity.auth.loginFormUrl = '/login/auth'
 //grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/admin/dashboard'
-grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/home'
+//grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/home'
 
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         [pattern: '/', access: ['ROLE_USER']],
+        [pattern: '/comingsoon', access: ['permitAll']],
         [pattern: '/userDevice/**', access: ['ROLE_USER']],
         [pattern: '/userAppliance/**', access: ['ROLE_USER']],
         [pattern: '/error', access: ['permitAll']],
