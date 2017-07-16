@@ -13,6 +13,7 @@ class UrlMappings {
         "/"(view:"/comingsoon")
         "/login"(view:"/signin")
         "/comingsoon"(view:"/comingsoon")
+        "/home"(controller: 'user',action: 'home')
         "/register"(view:"/signup")
         "/error"(view:"/error")
         "500"(view:'/error')

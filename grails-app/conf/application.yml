@@ -90,7 +90,7 @@ dataSource:
     jmxExport: true
     driverClassName: com.mysql.jdbc.Driver
     dialect: com.dt.dtcore.mysql.CustomMySQLInnoDBDialect
-    logSql: true
+    logSql: false
 
 environments:
     development:
