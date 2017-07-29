@@ -11,8 +11,6 @@
 <body>
 <g:link controller="userDevice" action="addDevice">Add Device</g:link>
 <br/>
-<g:link controller='logout'>Logout</g:link>
-<br/>
 
 <div>
     <g:link controller="userDevice" action="listDevices">Device List</g:link>
