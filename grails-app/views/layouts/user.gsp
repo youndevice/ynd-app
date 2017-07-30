@@ -29,10 +29,17 @@
         });
     </script>
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-35668496-1', 'auto');
         ga('send', 'pageview');
@@ -63,9 +70,9 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">
+                        <g:link class="navbar-brand" controller="user" action="home">
                             <asset:image src="ynd_logo_black.png" width="30"/>
-                        </a>
+                        </g:link>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -79,19 +86,19 @@
                             <li>
                                 <g:link controller="userAppliance" action="listAppliances">Appliance</g:link>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>
+                            %{--<li class="dropdown">--}%
+                                %{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"--}%
+                                   %{--aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>--}%
+                                %{--<ul class="dropdown-menu">--}%
+                                    %{--<li><a href="#">Action</a></li>--}%
+                                    %{--<li><a href="#">Another action</a></li>--}%
+                                    %{--<li><a href="#">Something else here</a></li>--}%
+                                    %{--<li role="separator" class="divider"></li>--}%
+                                    %{--<li><a href="#">Separated link</a></li>--}%
+                                    %{--<li role="separator" class="divider"></li>--}%
+                                    %{--<li><a href="#">One more separated link</a></li>--}%
+                                %{--</ul>--}%
+                            %{--</li>--}%
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
@@ -121,12 +128,17 @@
                 </div>
 
                 <div class="panel-body">
-                    <g:each in="${applianceList}" var="appliance">
-                        <g:link controller="userAppliance" action="showAppliance"
-                                id="${appliance.id}">
-                            <asset:image src="appliances/${appliance?.category?.img48}.png"/>
-                        </g:link>
-                    </g:each>
+                    <g:if test="${applianceList}">
+                        <g:each in="${applianceList}" var="appliance">
+                            <g:link controller="userAppliance" action="showAppliance"
+                                    id="${appliance.id}">
+                                <asset:image src="appliances/${appliance?.category?.img48}.png"/>
+                            </g:link>
+                        </g:each>
+                    </g:if>
+                    <g:else>
+                        No Appliance
+                    </g:else>
                 </div>
             </div>
         </div>
@@ -134,6 +146,7 @@
         <div class="col-md-9">
             <g:layoutBody/>
         </div>
+
     </div>
 </div>
 

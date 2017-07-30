@@ -13,6 +13,7 @@
     <div class="panel-heading">
         <h3 class="panel-title">Device Id : ${device.deviceId}</h3>
     </div>
+
     <div class="panel-body">
         <g:if test="${device.applianceType.typeValue}">
             <g:each in="${1..device.applianceType.typeValue}" var="i">
@@ -23,9 +24,10 @@
                             <h4>${applianceInstance?.applianceId}</h4>
                         </g:if>
                         <g:else>
-                            <h4>Appliance ${i}</h4>
                             <g:link controller="userAppliance" action="addAppliance"
-                                    params="[pinNumber: i, deviceId: device.id]" class="btn btn-danger">Add Appliance</g:link>
+                                    params="[pinNumber: i, deviceId: device.id]" class="btn btn-danger">
+                                <span class="glyphicon"></span>Appliance ${i}
+                            </g:link>
                         </g:else>
                     </div>
                 </div>

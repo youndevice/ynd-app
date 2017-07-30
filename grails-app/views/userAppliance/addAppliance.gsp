@@ -38,7 +38,7 @@
 
         <div class="form-group">
             <div class="col-md-4 col-md-offset-4">
-                <g:submitButton name="Add Appliance" class="btn btn-success"/>
+                <g:submitButton name="Add Appliance" class="btn btn-danger"/>
             </div>
         </div>
     </fieldset>

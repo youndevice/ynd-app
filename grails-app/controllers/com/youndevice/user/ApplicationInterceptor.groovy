@@ -26,8 +26,8 @@ class ApplicationInterceptor {
             it.appliances
         }
         applianceList = applianceList.flatten()
-        model.deviceList = deviceList
-        model.applianceList = applianceList
+//        model.deviceList = deviceList
+        model?.applianceList = applianceList
         true
     }
 

@@ -66,6 +66,8 @@ class UserApplianceController {
         Appliance appliance = Appliance.get(id)
         try {
             flash.success = "Appliance deleted successsfully"
+            Device device = appliance.device
+            device.removeFromAppliances(appliance)
             appliance.delete()
         } catch (Exception e) {
             log.error(e)
