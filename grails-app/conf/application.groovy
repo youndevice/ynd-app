@@ -11,6 +11,7 @@ grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         [pattern: '/', access: ['ROLE_USER']],
         [pattern: '/comingsoon', access: ['permitAll']],
+        [pattern: '/verifyUser', access: ['permitAll']],
         [pattern: '/userDevice/**', access: ['ROLE_USER']],
         [pattern: '/util/**', access: ['ROLE_USER']],
         [pattern: '/userAppliance/**', access: ['ROLE_USER']],
@@ -23,6 +24,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         [pattern: '/signup', access: ['permitAll']],
         [pattern: '/signup', access: ['permitAll']],
         [pattern: '/user/registerUser', access: ['permitAll']],
+        [pattern: '/user/confirmUser', access: ['permitAll']],
         [pattern: '/user/**', access: ['ROLE_USER']],
 //        [pattern: '/index.gsp', access: ['ROLE_ADMIN']],
         [pattern: '/shutdown', access: ['permitAll']],
@@ -44,3 +46,24 @@ grails.plugin.springsecurity.filterChain.chainMap = [
         [pattern: '/**', filters: 'JOINED_FILTERS']
 ]
 
+grails {
+    mail {
+        host = System.getenv('MAIL_HOST') ?: "smtp.gmail.com"
+        port = System.getenv('MAIL_PORT') ?: 465
+        username = System.getenv('YND_MAIL_USER_NAME') ?: "youndevice.2017@gmail.com"
+        password = System.getenv('YND_MAIL_PASSWORD') ?: ""
+
+        if (System.getenv('CLIENT_EMAIL_SMTP')) {
+            props = ["mail.smtp.starttls.enable": System.getenv('MAIL_SMTP_STARTTLS_ENABLE') ?: "true",
+                     "mail.smtp.port"           : System.getenv('MAIL_PORT') ?: 587]
+        } else {
+            props = ["mail.smtp.auth"                  : System.getenv('MAIL_SMTP_AUTH') ?: "true",
+                     "mail.smtp.socketFactory.port"    : System.getenv('MAIL_SMTP_SOCKET_FACTORY_PORT') ?: "465",
+                     "mail.smtp.socketFactory.class"   : System.getenv('MAIL_SMTP_SOCKET_FACTORY_CLASS') ?: "javax.net.ssl.SSLSocketFactory",
+                     "mail.smtp.socketFactory.fallback": System.getenv('MAIL_SMTP_SOCKET_FACTORY_FALLBACK') ?: "false",
+                     "mail.smtp.starttls.enable"       : System.getenv('MAIL_SMTP_STARTTLS_ENABLE') ?: "true"
+            ]
+        }
+
+    }
+}

@@ -9,21 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <asset:stylesheet src="application.css"/>
-    <asset:stylesheet src="bootstrap.css"/>
-    %{--<asset:javascript src="bootstrap.js"/>--}%
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-35668496-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
     <g:layoutHead/>
 </head>
 <body>
+<g:if test="${flash.success}">
+    <div class="alert alert-success" style="display: block"  role="alert">${flash.success}</div>
+</g:if>
+<g:if test="${flash.error}">
+    <div class="alert alert-danger" style="display: block" role="alert">${flash.error}</div>
+</g:if>
  <g:layoutBody/>
     <div id="spinner" class="spinner" style="display:none;">
         <g:message code="spinner.alt" default="Loading&hellip;"/>

@@ -9,6 +9,9 @@
 </head>
 
 <body>
+<div class="pull-right">
+    <g:link class="btn btn-danger" controller="userDevice" action="addDevice"> Add Device</g:link>
+</div>
 <legend>Device List</legend>
 <g:if test="${deviceList}">
     <g:each in="${deviceList}" var="device" status="i">

@@ -5,6 +5,11 @@
     <title>Welcome to Grails</title>
 
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
+    <style type="text/css">
+    .jumbotron {
+        min-height: 150px;
+    }
+    </style>
 
 </head>
 

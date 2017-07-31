@@ -23,9 +23,9 @@ class UserDeviceController {
         User user = springSecurityService.currentUser
         Boolean count = user.devices.count { it.deviceId == deviceId } as Boolean
         if (!count) {
-            flash.success = 'device is successfully added to user'
             Device device = Device.findByDeviceId(deviceId)
             if (device) {
+                flash.success = 'device is successfully added to user'
                 device.userFriendlyName = userFriendlyName
                 user.addToDevices(device)
                 user.save(failOnError: true)

@@ -16,6 +16,7 @@ class UrlMappings {
         "/comingsoon"(view:"/comingsoon")
         "/home"(controller: 'user',action: 'home')
         "/register"(view:"/signup")
+        "/verifyUser"(view:"/verifyUser")
         "/error"(view:"/error")
         "500"(view:'/error')
         "404"(view:'/notFound')

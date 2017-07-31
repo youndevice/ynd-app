@@ -12,11 +12,15 @@ class UserApplianceController {
 
     def listAppliances() {
         User user = springSecurityService.currentUser
-        List<Appliance> applianceList = Appliance.createCriteria().list {
-            'device' {
-                'in'('id', user.devices.collect { it.id })
-            }
-        } as List<Appliance>
+        List deviceIdList = user.devices.collect { it.id }
+        List<Appliance> applianceList = []
+        if(deviceIdList){
+            applianceList = Appliance.createCriteria().list {
+                'device' {
+                    'in'('id', deviceIdList)
+                }
+            } as List<Appliance>
+        }
         [applianceList: applianceList]
     }
 

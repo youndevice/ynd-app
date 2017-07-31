@@ -20,6 +20,7 @@ class User implements Serializable {
 	String text
 	String username
 	String password
+	String token
 	boolean enabled = true
 	boolean accountExpired = false
 	boolean accountLocked =false
@@ -54,6 +55,7 @@ class User implements Serializable {
 		lastName nullable: true,blank: true
 		mobileNumber nullable: true,blank: true
 		text nullable: true,blank: true
+		token nullable: true,blank: true
 	}
 
 	static mapping = {
